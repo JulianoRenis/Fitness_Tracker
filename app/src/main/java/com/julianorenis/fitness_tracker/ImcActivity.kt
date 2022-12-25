@@ -66,7 +66,7 @@ class ImcActivity : AppCompatActivity() {
             .create()
             .show()
 
-            // chamada de serviços do aparelho-> Fechando teclado ao mostrar alert
+            // chamada de serviços do aparelho -> Fechando teclado ao mostrar alert
             val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             service.hideSoftInputFromWindow(currentFocus?.windowToken,0)
         }

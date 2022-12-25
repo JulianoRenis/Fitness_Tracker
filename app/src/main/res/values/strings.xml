@@ -18,6 +18,7 @@
     <string name="imc_so_high_weight">Moderadamente obeso</string>
     <string name="imc_severely_high_weight">Severamente obeso</string>
     <string name="imc_extreme_weight">Extremamente obeso</string>
+    <string name="imc_button">I M C</string>
 
 
 </resources>
