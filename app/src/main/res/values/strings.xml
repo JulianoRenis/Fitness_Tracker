@@ -23,5 +23,7 @@
     <string name="save">Salvar</string>
     <string name="saved">Registro salvo com sucesso!</string>
 
+    <string name="list_response">Resultado: %1$.2f</string>
+
 
 </resources>

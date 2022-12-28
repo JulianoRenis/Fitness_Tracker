@@ -2,6 +2,7 @@ package com.julianorenis.fitness_tracker
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -71,7 +72,11 @@ class ImcActivity : AppCompatActivity() {
                         dao.insert(Calc(type = "imc", res = resultForm))
 
                         runOnUiThread{
-                            Toast.makeText(this@ImcActivity,R.string.saved,Toast.LENGTH_LONG).show()
+                            val intent = Intent(this@ImcActivity,ListCalc::class.java)
+                            intent.putExtra("data","data")
+                            intent.putExtra("type","imc")
+                            intent.putExtra("valor","valor")
+                            startActivity(intent)
                         }
                     }.start()
 
