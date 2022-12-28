@@ -4,13 +4,13 @@ import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
-import android.view.inputmethod.InputMethodSession
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.julianorenis.fitness_tracker.model.Calc
 
 class ImcActivity : AppCompatActivity() {
 
@@ -47,28 +47,41 @@ class ImcActivity : AppCompatActivity() {
             diaglog.setPositiveButton(android.R.string.ok,
                 object : DialogInterface.OnClickListener {
                     override fun onClick(p0: DialogInterface?, p1: Int) {
-                         //  código roda aqui depois do clique
+                        //  código roda aqui depois do clique
                     }
 
                 })
             val d = diaglog.create()
             d.show()
-           //---------------------------------------------------//
+            //---------------------------------------------------//
 
 
             // Código mais límpo
             AlertDialog.Builder(this)
-            .setTitle(getString(R.string.imc_response, resultForm))
-            .setMessage(R.string.calcular)
-            diaglog.setPositiveButton(android.R.string.ok) { diaglog,which -> // Usando o lambda
-                //código roda aqui depois do clique
-            }
-            .create()
-            .show()
+                .setTitle(getString(R.string.imc_response, resultForm))
+                .setMessage(R.string.calcular)
+                .setPositiveButton(android.R.string.ok) { dialog, which -> // Usando o lambda
+                    //código roda aqui depois do clique
+                }
+                .setNegativeButton(R.string.save) { dialog, which ->
+
+                    Thread {
+                        val app = application as App
+                        val dao = app.db.calcDao()
+                        dao.insert(Calc(type = "imc", res = resultForm))
+
+                        runOnUiThread{
+                            Toast.makeText(this@ImcActivity,R.string.saved,Toast.LENGTH_LONG).show()
+                        }
+                    }.start()
+
+                }
+                .create()
+                .show()
 
             // chamada de serviços do aparelho -> Fechando teclado ao mostrar alert
             val service = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            service.hideSoftInputFromWindow(currentFocus?.windowToken,0)
+            service.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
         }
 
     }

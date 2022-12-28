@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Fitness_Tracker</string>
+    <string name="label_imc">I M C</string>
     <string name="imc_response">Seu IMC é : %1$.2f</string>
     <string name="imc_desc">IMC é a sigla para Índice de Massa Corporal que serve para avaliar o peso
         do indivíduo em relação à sua altura e assim indicar se está dentro do peso ideal,
@@ -19,6 +20,8 @@
     <string name="imc_severely_high_weight">Severamente obeso</string>
     <string name="imc_extreme_weight">Extremamente obeso</string>
     <string name="imc_button">I M C</string>
+    <string name="save">Salvar</string>
+    <string name="saved">Registro salvo com sucesso!</string>
 
 
 </resources>
