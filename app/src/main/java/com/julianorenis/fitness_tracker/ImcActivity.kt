@@ -42,21 +42,21 @@ class ImcActivity : AppCompatActivity() {
 
             val imcResponseId = imcResponse(resultForm)
             // AlertDialog
-
-            // Codigo mais comum ---------------------------------//
-            val diaglog = AlertDialog.Builder(this)
-            diaglog.setTitle(getString(R.string.imc_response, resultForm))
-            diaglog.setMessage(R.string.calcular)
-            diaglog.setPositiveButton(android.R.string.ok,
-                object : DialogInterface.OnClickListener {
-                    override fun onClick(p0: DialogInterface?, p1: Int) {
-                        //  código roda aqui depois do clique
-                    }
-
-                })
-            val d = diaglog.create()
-            d.show()
-            //---------------------------------------------------//
+//
+//            // Codigo mais comum ---------------------------------//
+//            val diaglog = AlertDialog.Builder(this)
+//            diaglog.setTitle(getString(R.string.imc_response, resultForm))
+//            diaglog.setMessage(R.string.calcular)
+//            diaglog.setPositiveButton(android.R.string.ok,
+//                object : DialogInterface.OnClickListener {
+//                    override fun onClick(p0: DialogInterface?, p1: Int) {
+//                        //  código roda aqui depois do clique
+//                    }
+//
+//                })
+//            val d = diaglog.create()
+//            d.show()
+//            //---------------------------------------------------//
 
 
             // Código mais límpo

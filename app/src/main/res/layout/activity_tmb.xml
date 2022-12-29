@@ -21,7 +21,7 @@
             android:text="@string/tmb_desc" />
 
         <EditText
-            android:id="@+id/edtPeso"
+            android:id="@+id/edt_tmb_Peso"
             style="@style/editTextFrom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             />
 
         <EditText
-            android:id="@+id/edtAltura"
+            android:id="@+id/edt_tmb_Altura"
             style="@style/editTextFrom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             android:autofillHints="" />
 
         <EditText
-            android:id="@+id/edtIdade"
+            android:id="@+id/edt_tmb_Age"
             style="@style/editTextFrom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
 
 
         <Button
-            android:id="@+id/btnCalcular"
+            android:id="@+id/btn_tmb_Calcular"
             style="@style/ButtonForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
