@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".TmbActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/textViewForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tmb_desc" />
+
+        <EditText
+            android:id="@+id/edtPeso"
+            style="@style/editTextFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/weight"
+            android:inputType="number"
+
+            />
+
+        <EditText
+            android:id="@+id/edtAltura"
+            style="@style/editTextFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/height"
+            android:minHeight="48dp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edtIdade"
+            style="@style/editTextFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/age"
+            android:textColorHint="#546E7A"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/AutotextViewForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_lifeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnCalcular"
+            style="@style/ButtonForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calcular" />
+
+    </LinearLayout>
+</ScrollView>

@@ -24,6 +24,9 @@
     <string name="saved">Registro salvo com sucesso!</string>
 
     <string name="list_response">Resultado: %1$.2f</string>
+    <string name="menu_buscar">Buscar</string>
+    <string name="tmb_desc">TMB é calculo para descobrir a quantidade calórica que o corpo nescessita com base no seu estilo de vida</string>
+    <string name="age">Idade</string>
 
 
 </resources>

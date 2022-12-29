@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
@@ -71,12 +73,8 @@ class ImcActivity : AppCompatActivity() {
                         val dao = app.db.calcDao()
                         dao.insert(Calc(type = "imc", res = resultForm))
 
-                        runOnUiThread{
-                            val intent = Intent(this@ImcActivity,ListCalc::class.java)
-                            intent.putExtra("data","data")
-                            intent.putExtra("type","imc")
-                            intent.putExtra("valor","valor")
-                            startActivity(intent)
+                        runOnUiThread {
+                            openListActivity()
                         }
                     }.start()
 
@@ -90,6 +88,15 @@ class ImcActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun openListActivity() {
+        val intent = Intent(this@ImcActivity, ListCalc::class.java)
+        intent.putExtra("data", "data")
+        intent.putExtra("type", "imc")
+        intent.putExtra("valor", "valor")
+        startActivity(intent)
+    }
+
 
     @StringRes
     private fun imcResponse(imc: Double): Int {
@@ -137,4 +144,19 @@ class ImcActivity : AppCompatActivity() {
             .isNotEmpty() && !editWeigth.text.toString()
             .startsWith("0") && !editHeigth.text.toString().startsWith("0")
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId==R.id.buscar_id){
+            finish()
+            openListActivity()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }
